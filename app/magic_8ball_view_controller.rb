@@ -8,6 +8,14 @@ class Magic8BallViewController < UIViewController
 
     @label = makeLabel
     view.addSubview(@label)
+
+    view.userInteractionEnabled = true
+    recognizer = UITapGestureRecognizer.alloc.initWithTarget(self, action:'showAnswer')
+    view.addGestureRecognizer(recognizer)
+  end
+
+  def showAnswer
+    @label.text = ['Yes', 'No', 'Maybe', 'Try Again'].sample
   end
 
   def makeLabel
