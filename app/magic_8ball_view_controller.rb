@@ -17,15 +17,16 @@ class Magic8BallViewController < UIViewController
   end
 
   def showAnswer
-    @label.text = @magicBall.randomAnswer
     #(main)> name.class.ancestors
     # => [String, NSMutableString, NSString, Comparable, NSObject, Kernel]
     #(main)> Array.ancestors
     # => [Array, NSMutableArray, NSArray, Enumerable, NSObject, Kernel]
-
-    @label.alpha = 0
     UIView.animateWithDuration(1.0,
       animations:lambda {
+        @label.alpha = 0
+      },
+      completion:lambda { |finishied|
+        @label.text = @magicBall.randomAnswer
         @label.alpha = 1
       })
   end
