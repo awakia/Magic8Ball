@@ -16,6 +16,10 @@ class Magic8BallViewController < UIViewController
 
   def showAnswer
     @label.text = ['Yes', 'No', 'Maybe', 'Try Again'].sample
+    #(main)> name.class.ancestors
+    # => [String, NSMutableString, NSString, Comparable, NSObject, Kernel]
+    #(main)> Array.ancestors
+    # => [Array, NSMutableArray, NSArray, Enumerable, NSObject, Kernel]
   end
 
   def makeLabel
