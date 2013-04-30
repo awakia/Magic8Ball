@@ -22,6 +22,12 @@ class Magic8BallViewController < UIViewController
     # => [String, NSMutableString, NSString, Comparable, NSObject, Kernel]
     #(main)> Array.ancestors
     # => [Array, NSMutableArray, NSArray, Enumerable, NSObject, Kernel]
+
+    @label.alpha = 0
+    UIView.animateWithDuration(1.0,
+      animations:lambda {
+        @label.alpha = 1
+      })
   end
 
   def makeLabel
