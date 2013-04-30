@@ -12,10 +12,12 @@ class Magic8BallViewController < UIViewController
     view.userInteractionEnabled = true
     recognizer = UITapGestureRecognizer.alloc.initWithTarget(self, action:'showAnswer')
     view.addGestureRecognizer(recognizer)
+
+    @magicBall = Magic8Ball.new
   end
 
   def showAnswer
-    @label.text = ['Yes', 'No', 'Maybe', 'Try Again'].sample
+    @label.text = @magicBall.randomAnswer
     #(main)> name.class.ancestors
     # => [String, NSMutableString, NSString, Comparable, NSObject, Kernel]
     #(main)> Array.ancestors
